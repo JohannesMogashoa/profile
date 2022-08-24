@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 import {
   BlogCard,
@@ -12,15 +12,15 @@ import {
   TitleContent,
   UtilityList,
   Img,
-} from "./ProjectsStyles";
+} from './ProjectsStyles';
 import {
   Section,
   SectionDivider,
   SectionText,
   SectionTitle,
-} from "../../styles/GlobalComponents";
-import { projects } from "../../constants/constants";
-import { LeftSection } from "../Hero/HeroStyles";
+} from '../../styles/GlobalComponents';
+import { projects } from '../../constants/constants';
+import { LeftSection } from '../Hero/HeroStyles';
 
 const Projects = () => (
   <Section nopadding id="projects">
@@ -29,7 +29,7 @@ const Projects = () => (
     <GridContainer>
       {!projects.length ? (
         <LeftSection>
-          <SectionText>Coming Soon...</SectionText>
+          <SectionText>Still fighting bugs...</SectionText>
         </LeftSection>
       ) : (
         projects.map((p, i) => {
