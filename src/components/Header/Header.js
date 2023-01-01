@@ -1,11 +1,11 @@
-import Link from "next/link";
-import React from "react";
+import Link from 'next/link';
+import React from 'react';
 import {
   AiFillGithub,
   AiFillTwitterSquare,
   AiFillLinkedin,
-} from "react-icons/ai";
-import { DiCssdeck } from "react-icons/di";
+} from 'react-icons/ai';
+import { DiCssdeck } from 'react-icons/di';
 
 import {
   Container,
@@ -14,15 +14,16 @@ import {
   Div3,
   NavLink,
   SocialIcons,
-} from "./HeaderStyles";
+} from './HeaderStyles';
 
 const Header = () => (
   <Container>
     <Div1>
-      <Link href="/">
-        <a style={{ display: "flex", alignItems: "center", color: "white" }}>
-          <DiCssdeck size="3rem" /> <span>Kode Stallion</span>
-        </a>
+      <Link
+        href="/"
+        style={{ display: 'flex', alignItems: 'center', color: 'white' }}
+      >
+        <DiCssdeck size="3rem" /> <span>Kode Stallion</span>
       </Link>
     </Div1>
     <Div2>

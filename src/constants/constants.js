@@ -1,14 +1,14 @@
 export const projects = [
-  // {
-  //   title: "Anony Sender",
-  //   description:
-  //     "Using NextJS, NextAuth, Prisma, tRPC & Postres - from start to finish. The App is called Anony Sender and it is a simple platform for sending anonymous messages to your friends. It's a simple way to send messages to your friends without revealing your identity.",
-  //   image: "/images/anony-sender.png",
-  //   tags: ["NextJs", "Prisma", "Postgres", "NextAuth", "tRPC"],
-  //   source: "https://anony-sender.vercel.app/",
-  //   code: "https://github.com/JohannesMogashoa/anony-sender",
-  //   id: 0,
-  // },
+  {
+    title: 'Anony Sender',
+    description:
+      "Using NextJS, NextAuth, Prisma, tRPC & Postgres - from start to finish. The App is called Anony Sender and it is a simple platform for sending anonymous messages to your friends. It's a simple way to send messages to your friends without revealing your identity.",
+    image: '/images/anony-sender.png',
+    tags: ['NextJs', 'Prisma', 'Postgres', 'NextAuth', 'tRPC'],
+    source: 'https://anony-sender.vercel.app/',
+    code: 'https://github.com/JohannesMogashoa/anony-sender',
+    id: 0,
+  },
   // {
   //   title: 'E-Commerce',
   //   description:"While building it you're going to learn many advanced React & JavaScript topics, as well as how to use Stripe for card transactions. On top of that, at the end of the video, you will have this unique and complex webshop app that you will be able to add to your portfolio. And trust me, e-commerce applications are impressive.",
