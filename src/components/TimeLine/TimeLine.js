@@ -24,7 +24,6 @@ const TOTAL_CAROUSEL_COUNT = TimeLineData.length;
 const Timeline = () => {
   const [activeItem, setActiveItem] = useState(0);
   const carouselRef = useRef();
-  const currentAge = new Date().getFullYear() - 2001;
 
   const scroll = (node, left) => {
     return node.scrollTo({ left, behavior: 'smooth' });
@@ -68,13 +67,12 @@ const Timeline = () => {
     <Section id="about">
       <SectionTitle>About Me</SectionTitle>
       <SectionText>
-        I am Johannes "Stallion" Mogashoa, a {currentAge} year old Full Stack
-        Developer that takes pride in being a young developer with the
-        capabilities of playing in the big leagues and excelling. I am a lover
-        of challenges, growth and evolution. I eat bugs, breathe issues and
-        shred code. Ever since joining this incredible community, I have always
-        been keen on giving back, mentoring and assisting whenever the
-        opportunity presents itself.
+        I am Johannes "Stallion" Mogashoa, a Full Stack Developer that takes
+        pride in being a young developer with the capabilities of playing in the
+        big leagues and excelling. I am a lover of challenges, growth and
+        evolution. I eat bugs, breathe issues and shred code. Ever since joining
+        this incredible community, I have always been keen on giving back,
+        mentoring and assisting whenever the opportunity presents itself.
       </SectionText>
       <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
         <>

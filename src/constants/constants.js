@@ -48,4 +48,5 @@ export const TimeLineData = [
   { year: 2022, text: '3rd Year SD Student' },
   { year: 2022, text: 'CoGrammer Code Reviewer' },
   { year: 2022, text: 'Jnr Frontend Dev @ Vaimo' },
+  { year: 2023, text: 'Jnr IT Dev @ InSync' },
 ];
