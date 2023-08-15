@@ -19,8 +19,8 @@ const Technologies = () => (
     <SectionDivider divider />
     <SectionTitle>Technologies</SectionTitle>
     <SectionText>
-      I've worked with a range a technologies in the web and mobile development
-      world. From Back-end To Design
+      Having worked with a variety of technologies, here are some that I 
+      have worked with the most.
     </SectionText>
     <List>
       <ListItem>
@@ -44,7 +44,8 @@ const Technologies = () => (
           <ListTitle>Back-End</ListTitle>
           <ListParagraph>
             Experience with <br />
-            Node, C# and Databases
+            Node + Express, C# + .NET <br /> 
+            and Databases
           </ListParagraph>
         </ListContainer>
       </ListItem>

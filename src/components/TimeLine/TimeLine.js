@@ -67,12 +67,10 @@ const Timeline = () => {
     <Section id="about">
       <SectionTitle>About Me</SectionTitle>
       <SectionText>
-        I am Johannes "Stallion" Mogashoa, a Full Stack Developer that takes
-        pride in being a young developer with the capabilities of playing in the
-        big leagues and excelling. I am a lover of challenges, growth and
-        evolution. I eat bugs, breathe issues and shred code. Ever since joining
-        this incredible community, I have always been keen on giving back,
-        mentoring and assisting whenever the opportunity presents itself.
+        I am Johannes "Stallion" Mogashoa, a software Developer that enjoys working
+        with full stack technologies be it with web or mobile. I am love challenges, 
+        and making a meaningful impact with my code. Ever since joining this incredible 
+        community, I have always been keen on one day contributing to open source projects.
       </SectionText>
       <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
         <>
