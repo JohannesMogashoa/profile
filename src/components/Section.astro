@@ -1,0 +1,10 @@
+---
+const { id, grid = false, nopadding = false, class: className = "" } = Astro.props;
+---
+
+<section
+	id={id}
+	class:list={["section", { "section--grid": grid, "section--nopadding": nopadding }, className]}
+>
+	<slot />
+</section>
