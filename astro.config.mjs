@@ -10,6 +10,7 @@ export default defineConfig({
   site: siteUrl,
   adapter: cloudflare({
     imageService: "passthrough",
+    mode: "directory",
   }),
   integrations: [react(), sitemap()],
   image: {
