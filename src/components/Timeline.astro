@@ -1,0 +1,88 @@
+---
+import Section from "./Section.astro";
+import SectionDivider from "./SectionDivider.astro";
+import SectionTitle from "./SectionTitle.astro";
+import { timeline } from "../data/portfolio.js";
+---
+
+<Section id="about" class="timeline-section">
+	<SectionTitle>About Me</SectionTitle>
+	<p class="section-text">
+		I'm a dedicated software developer with a focus on full stack technologies for web and mobile applications. I thrive on solving complex challenges and am committed to writing code that is not only effective but also maintainable, keeping both end users and fellow developers in mind. Beyond coding, I share insights and experiences through blog posts on Dev.To, where I explore topics that can help others grow in their own development journeys. I'm also an advocate for open-source, contributing to projects whenever possible to collaborate with and learn from the broader developer community.
+	</p>
+
+	<div class="timeline" data-timeline>
+		<ul class="timeline__track" data-timeline-track aria-label="Career timeline">
+			{timeline.map((item, index) => (
+				<li class="timeline__node" data-timeline-node>
+					<button class="timeline__item" type="button" data-timeline-item data-index={index} aria-label={`Show ${item.year}: ${item.text}`}>
+						<span class="timeline__year">{item.year}<span class="timeline__line" aria-hidden="true"></span></span>
+						<span class="timeline__text">{item.text}</span>
+					</button>
+				</li>
+			))}
+		</ul>
+		<div class="timeline__buttons" data-timeline-buttons aria-label="Timeline navigation">
+			{timeline.map((item, index) => (
+				<button class="timeline__dot" type="button" data-timeline-dot data-index={index} aria-label={`Go to timeline item ${index + 1}`}>
+					<span aria-hidden="true"></span>
+				</button>
+			))}
+		</div>
+	</div>
+	<SectionDivider />
+</Section>
+
+<script>
+	const timelines = document.querySelectorAll("[data-timeline]");
+
+	const setupTimeline = (timeline) => {
+		const track = timeline.querySelector("[data-timeline-track]");
+		const items = [...timeline.querySelectorAll("[data-timeline-item]")];
+		const dots = [...timeline.querySelectorAll("[data-timeline-dot]")];
+		let activeIndex = 0;
+
+		const setActive = (index, shouldScroll = true) => {
+			activeIndex = Math.max(0, Math.min(index, items.length - 1));
+
+			items.forEach((item, itemIndex) => {
+				const isActive = itemIndex === activeIndex;
+				item.classList.toggle("is-active", isActive);
+				item.setAttribute("aria-current", isActive ? "true" : "false");
+			});
+
+			dots.forEach((dot, dotIndex) => {
+				const isActive = dotIndex === activeIndex;
+				dot.classList.toggle("is-active", isActive);
+				if (isActive) dot.setAttribute("aria-current", "true");
+				else dot.removeAttribute("aria-current");
+			});
+
+			if (shouldScroll && track && window.matchMedia("(max-width: 640px)").matches) {
+				items[activeIndex]?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "start" });
+			}
+		};
+
+		items.forEach((item, index) => item.addEventListener("click", () => setActive(index)));
+		dots.forEach((dot, index) => dot.addEventListener("click", () => setActive(index)));
+
+		track?.addEventListener("scroll", () => {
+			if (!window.matchMedia("(max-width: 640px)").matches) return;
+			const trackRect = track.getBoundingClientRect();
+			const closestIndex = items.reduce((closest, item, index) => {
+				const distance = Math.abs(item.getBoundingClientRect().left - trackRect.left);
+				return distance < closest.distance ? { index, distance } : closest;
+			}, { index: 0, distance: Number.POSITIVE_INFINITY });
+			setActive(closestIndex.index, false);
+		}, { passive: true });
+
+		window.addEventListener("resize", () => {
+			if (track) track.scrollTo({ left: 0, behavior: "auto" });
+			setActive(0, false);
+		});
+
+		setActive(0, false);
+	};
+
+	timelines.forEach(setupTimeline);
+</script>

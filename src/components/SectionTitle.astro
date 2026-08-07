@@ -1,0 +1,7 @@
+---
+const { main = false } = Astro.props;
+---
+
+<h2 class:list={["section-title", { "section-title--main": main }]}>
+	<slot />
+</h2>

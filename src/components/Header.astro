@@ -1,0 +1,31 @@
+---
+import { AiFillGithub, AiFillLinkedin, AiFillTwitterSquare } from "react-icons/ai";
+import { DiCssdeck } from "react-icons/di";
+---
+
+<header class="site-header">
+	<div class="site-header__brand">
+		<a href="/" class="brand-link" aria-label="Kode Stallion home">
+			<DiCssdeck size={30} aria-hidden="true" />
+			<span>Kode Stallion</span>
+		</a>
+	</div>
+
+	<nav class="site-header__nav" aria-label="Primary navigation">
+		<a href="#about">About</a>
+		<a href="#articles">Articles</a>
+		<a href="#tech">Technologies</a>
+	</nav>
+
+	<div class="site-header__socials" aria-label="Social links">
+		<a href="https://www.github.com/JohannesMogashoa" aria-label="GitHub" target="_blank" rel="noreferrer">
+			<AiFillGithub size={30} aria-hidden="true" />
+		</a>
+		<a href="https://www.linkedin.com/in/johannes-mogashoa-358416190" aria-label="LinkedIn" target="_blank" rel="noreferrer">
+			<AiFillLinkedin size={30} aria-hidden="true" />
+		</a>
+		<a href="https://www.twitter.com/iam_johannesm" aria-label="Twitter" target="_blank" rel="noreferrer">
+			<AiFillTwitterSquare size={30} aria-hidden="true" />
+		</a>
+	</div>
+</header>

@@ -1,0 +1,38 @@
+---
+import { DiFirebase, DiReact, DiZend } from "react-icons/di";
+import Section from "./Section.astro";
+import SectionDivider from "./SectionDivider.astro";
+import SectionTitle from "./SectionTitle.astro";
+---
+
+<Section id="tech">
+	<SectionDivider spaced />
+	<SectionTitle>Technologies</SectionTitle>
+	<p class="section-text">
+		Having worked with a variety of technologies, here are some that I have worked with the most.
+	</p>
+	<ul class="technology-list">
+		<li>
+			<picture><DiReact size={30} aria-hidden="true" /></picture>
+			<div>
+				<h3>Front-End</h3>
+				<p>React.js, Vue.js, Magento PWA, <br />Vodapay MiniApp, Blazor WASM</p>
+			</div>
+		</li>
+		<li>
+			<picture><DiFirebase size={30} aria-hidden="true" /></picture>
+			<div>
+				<h3>Back-End</h3>
+				<p>NodeJS, Express, C#, .NET <br />Blazor Server and Databases</p>
+			</div>
+		</li>
+		<li>
+			<picture><DiZend size={30} aria-hidden="true" /></picture>
+			<div>
+				<h3>UI/UX</h3>
+				<p>Adobe XD &amp; Figma</p>
+			</div>
+		</li>
+	</ul>
+	<SectionDivider />
+</Section>
