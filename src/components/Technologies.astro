@@ -1,5 +1,5 @@
 ---
-import { DiFirebase, DiReact, DiZend } from "react-icons/di";
+import Icon from "./Icon.astro";
 import Section from "./Section.astro";
 import SectionDivider from "./SectionDivider.astro";
 import SectionTitle from "./SectionTitle.astro";
@@ -13,21 +13,33 @@ import SectionTitle from "./SectionTitle.astro";
 	</p>
 	<ul class="technology-list">
 		<li>
-			<picture><DiReact size={30} aria-hidden="true" /></picture>
+			<picture>
+				<Icon name="frontend" size={30} />
+			</picture>
 			<div>
 				<h3>Front-End</h3>
-				<p>TypeScript, React, Vue.js, <br />Blazor WebAssembly</p>
+				<p>
+					TypeScript, React, Vue.js, <br />
+					Blazor WebAssembly
+				</p>
 			</div>
 		</li>
 		<li>
-			<picture><DiFirebase size={30} aria-hidden="true" /></picture>
+			<picture>
+				<Icon name="backend" size={30} />
+			</picture>
 			<div>
 				<h3>Back-End</h3>
-				<p>C#, .NET, Node.js, API design, <br />PostgreSQL and SQL Server</p>
+				<p>
+					C#, .NET, Node.js, API design, <br />
+					PostgreSQL and SQL Server
+				</p>
 			</div>
 		</li>
 		<li>
-			<picture><DiZend size={30} aria-hidden="true" /></picture>
+			<picture>
+				<Icon name="cloud" size={30} />
+			</picture>
 			<div>
 				<h3>Cloud &amp; Delivery</h3>
 				<p>AWS, Azure, Docker &amp; GitHub Actions</p>

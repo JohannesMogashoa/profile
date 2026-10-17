@@ -1,26 +1,41 @@
 {
-  "name": "johannes-portfolio",
-  "version": "1.0.0",
-  "private": true,
-  "license": "MIT",
-  "packageManager": "pnpm@11.20.0",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "cf:preview": "astro build && wrangler dev",
-    "cf:deploy": "astro build && wrangler deploy"
-  },
-  "dependencies": {
-    "@astrojs/cloudflare": "latest",
-    "@astrojs/react": "latest",
-    "@astrojs/sitemap": "latest",
-    "astro": "latest",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^4.12.0"
-  },
-  "devDependencies": {
-    "wrangler": "latest"
-  }
+	"name": "johannes-portfolio",
+	"version": "1.0.0",
+	"private": true,
+	"type": "module",
+	"license": "MIT",
+	"packageManager": "pnpm@11.20.0",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro check && astro build",
+		"preview": "astro preview",
+		"format": "prettier --write .",
+		"format:check": "prettier --check .",
+		"lint": "eslint .",
+		"typecheck": "astro check",
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"test:e2e": "playwright test",
+		"verify": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm build",
+		"cf:preview": "astro build && wrangler dev",
+		"cf:deploy": "astro build && wrangler deploy"
+	},
+	"dependencies": {
+		"@astrojs/sitemap": "latest",
+		"astro": "latest"
+	},
+	"devDependencies": {
+		"@astrojs/check": "latest",
+		"@eslint/js": "latest",
+		"@playwright/test": "latest",
+		"eslint": "latest",
+		"eslint-plugin-astro": "latest",
+		"globals": "latest",
+		"prettier": "latest",
+		"prettier-plugin-astro": "latest",
+		"typescript": "6.0.3",
+		"typescript-eslint": "latest",
+		"vitest": "latest",
+		"wrangler": "latest"
+	}
 }

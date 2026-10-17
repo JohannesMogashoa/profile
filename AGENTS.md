@@ -1,37 +1,52 @@
 # Repository Guidelines
 
-## Project Structure & Module Organization
+## Project structure
 
-This repository is an Astro personal portfolio using pnpm, Astro components, and the Cloudflare adapter.
+This repository is a static Astro portfolio deployed to Cloudflare Workers.
 
-- `src/pages/` contains Astro routes (`index.astro`).
-- `src/components/` contains Astro page sections such as `Hero`, `Projects`, `Articles`, and `Timeline`.
-- `src/layouts/` contains shared page layouts, while `src/styles/`, `src/data/`, and `src/lib/` hold global styles, portfolio data, and server helpers.
-- `public/` contains static images, the favicon, and resume PDFs. Reference these assets by root-relative paths.
+- `src/pages/` contains Astro routes.
+- `src/components/` contains native Astro page sections and shared UI.
+- `src/content/articles/` and `src/content/projects/` contain validated content entries.
+- `src/content.config.ts` owns article and project schemas.
+- `src/layouts/`, `src/styles/`, and `src/data/` contain shared layouts, CSS, and typed data.
+- `tests/e2e/` contains Playwright production smoke tests.
+- `public/` contains static assets, including compatibility résumé URLs.
 
-## Build, Test, and Development Commands
+Prefer prerendered Astro components, native HTML/CSS, and small browser scripts. Do not add a UI
+framework or on-demand route without a measured requirement.
 
-Use pnpm, consistent with the checked-in `pnpm-lock.yaml`:
+## Commands
 
-- `pnpm install` — install dependencies.
-- `pnpm dev` — start the local Astro development server with hot reload.
-- `pnpm build` — create the Cloudflare-compatible production build.
-- `pnpm preview` — serve the production build locally after `pnpm build`.
+Use pnpm 11.20.0 with Node.js 24:
 
-There is currently no test or lint script in `package.json`; manually verify changed sections in a browser and keep the build passing.
+- `pnpm install` - install the locked dependency graph.
+- `pnpm dev` - start the Astro development server.
+- `pnpm format` / `pnpm format:check` - apply or check Prettier.
+- `pnpm lint` - run ESLint.
+- `pnpm typecheck` - run Astro and TypeScript diagnostics.
+- `pnpm test` - run Vitest unit/component tests.
+- `pnpm build` - typecheck and generate the static site.
+- `pnpm test:e2e` - build and run Playwright desktop/mobile smoke tests.
+- `pnpm verify` - run formatting, linting, types, unit tests, and build.
+- `pnpm cf:preview` / `pnpm cf:deploy` - preview or deploy static assets with Wrangler.
 
-## Coding Style & Naming Conventions
+Run `pnpm verify`, `pnpm test:e2e`, and `git diff --check` before handoff.
 
-Follow the existing Astro/JavaScript style: tabs for indentation, semicolons, trailing commas where natural, and double-quoted imports/strings. Use PascalCase for Astro component names, camelCase for variables and functions, and kebab-case CSS classes. Keep browser-only behavior isolated to small client scripts or explicitly hydrated islands.
+## Code and content conventions
 
-## Testing Guidelines
+Use tabs, semicolons, double quotes, trailing commas, PascalCase Astro components, camelCase
+variables, and kebab-case CSS classes. Add explicit Astro prop interfaces and typed shared data.
 
-No automated testing framework or coverage threshold is configured. For UI changes, run `pnpm dev`, check responsive layouts and navigation, and run `pnpm build` before submitting. If tests are added, place them near the relevant component and use clear names describing the behavior under test.
+Author articles and projects through their content collections. Keep unreviewed projects as drafts,
+preserve stable entry IDs, and never invent outcomes, client approval, production status, or metrics.
+Reference public assets with root-relative paths.
 
-## Commit & Pull Request Guidelines
+## Pull requests and deployment
 
-Recent commits are short, imperative, and sometimes use prefixes such as `feat:` and `chore:` (for example, `chore: update resume & site content`). Follow that pattern and keep each commit focused. Pull requests should explain the visible or content change, list verification commands, link related issues when applicable, and include screenshots or recordings for visual changes. Call out updates to resume PDFs or other public assets explicitly.
+Keep commits focused and imperative, optionally using prefixes such as `feat:` or `chore:`. Pull
+requests must explain visible/content changes, list verification commands, link related issues, and
+include screenshots for visual changes. Call out résumé or other public-asset updates.
 
-## Security & Configuration Tips
-
-Do not commit secrets or environment-specific credentials. Keep public assets free of sensitive personal information beyond what the portfolio intentionally publishes, and review generated/static output before committing it.
+GitHub Actions validates the locked install, project verification, and Playwright Chromium suite.
+Never commit credentials or environment-specific secrets. Review generated output and public assets
+for sensitive information before deployment.

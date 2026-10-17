@@ -1,4 +1,11 @@
 ---
+interface Props {
+	id?: string;
+	grid?: boolean;
+	nopadding?: boolean;
+	class?: string;
+}
+
 const { id, grid = false, nopadding = false, class: className = "" } = Astro.props;
 ---
 

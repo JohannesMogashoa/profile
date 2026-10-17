@@ -57,10 +57,10 @@ Lighthouse 13.0.1 was run against
 `https://johannesmogashoa.co.za/` on 2026-10-17 using cached Chromium 153 in
 headless mode. Scores are lab measurements and may vary between runs.
 
-| Profile | Viewport | Performance | Accessibility | Best practices | SEO |
-| --- | --- | ---: | ---: | ---: | ---: |
-| Mobile | 412 × 823, DPR 1.75, simulated throttling | 97 | 91 | 100 | 100 |
-| Desktop | 1350 × 940, DPR 1, simulated throttling | 98 | 95 | 100 | 100 |
+| Profile | Viewport                                  | Performance | Accessibility | Best practices | SEO |
+| ------- | ----------------------------------------- | ----------: | ------------: | -------------: | --: |
+| Mobile  | 412 × 823, DPR 1.75, simulated throttling |          97 |            91 |            100 | 100 |
+| Desktop | 1350 × 940, DPR 1, simulated throttling   |          98 |            95 |            100 | 100 |
 
 Measured performance details:
 

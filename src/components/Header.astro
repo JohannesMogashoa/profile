@@ -1,12 +1,11 @@
 ---
-import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
-import { DiCssdeck } from "react-icons/di";
+import Icon from "./Icon.astro";
 ---
 
 <header class="site-header">
 	<div class="site-header__brand">
 		<a href="/" class="brand-link" aria-label="Kode Stallion home">
-			<DiCssdeck size={30} aria-hidden="true" />
+			<Icon name="brand" size={30} />
 			<span>Kode Stallion</span>
 		</a>
 	</div>
@@ -18,11 +17,21 @@ import { DiCssdeck } from "react-icons/di";
 	</nav>
 
 	<div class="site-header__socials" aria-label="Social links">
-		<a href="https://www.github.com/JohannesMogashoa" aria-label="GitHub" target="_blank" rel="noreferrer">
-			<AiFillGithub size={30} aria-hidden="true" />
+		<a
+			href="https://www.github.com/JohannesMogashoa"
+			aria-label="GitHub"
+			target="_blank"
+			rel="noreferrer"
+		>
+			<Icon name="github" size={30} />
 		</a>
-		<a href="https://www.linkedin.com/in/johannes-mogashoa-358416190" aria-label="LinkedIn" target="_blank" rel="noreferrer">
-			<AiFillLinkedin size={30} aria-hidden="true" />
+		<a
+			href="https://www.linkedin.com/in/johannes-mogashoa-358416190"
+			aria-label="LinkedIn"
+			target="_blank"
+			rel="noreferrer"
+		>
+			<Icon name="linkedin" size={30} />
 		</a>
 	</div>
 </header>

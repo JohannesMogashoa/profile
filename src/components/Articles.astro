@@ -1,9 +1,14 @@
 ---
+import type { CollectionEntry } from "astro:content";
 import Section from "./Section.astro";
 import SectionDivider from "./SectionDivider.astro";
 import SectionTitle from "./SectionTitle.astro";
 
-const { articles = [] } = Astro.props;
+interface Props {
+	articles: CollectionEntry<"articles">[];
+}
+
+const { articles } = Astro.props;
 ---
 
 <Section id="articles" nopadding>
@@ -11,24 +16,39 @@ const { articles = [] } = Astro.props;
 	<SectionTitle main>Articles</SectionTitle>
 	<div class="card-grid">
 		{articles.length === 0 ? (
-			<p class="section-text section-text--empty">Articles are temporarily unavailable. Please check back soon.</p>
+			<p class="section-text section-text--empty">
+				Articles are temporarily unavailable. Please check back soon.
+			</p>
 		) : (
-			articles.map((article) => (
+			articles.map(({ data: article }) => (
 				<article class="portfolio-card">
 					{article.image ? (
 						<img src={article.image} alt={article.title} loading="lazy" decoding="async" />
 					) : (
-						<div class="portfolio-card__image-placeholder" aria-hidden="true">DEV.to</div>
+						<div class="portfolio-card__image-placeholder" aria-hidden="true">
+							DEV.to
+						</div>
 					)}
-					<div class="card-title"><h3>{article.title}</h3><hr /></div>
+					<div class="card-title">
+						<h3>{article.title}</h3>
+						<hr />
+					</div>
 					<p class="card-info">{article.description}</p>
 					<div>
 						<div class="card-label">Tags</div>
 						<ul class="tag-list">
-							{article.tags.map((tag) => <li>{tag}</li>)}
+							{article.tags.map((tag) => (
+								<li>{tag}</li>
+							))}
 						</ul>
 					</div>
-					<ul class="card-links"><li><a href={article.url} target="_blank" rel="noreferrer">Read</a></li></ul>
+					<ul class="card-links">
+						<li>
+							<a href={article.url} target="_blank" rel="noreferrer">
+								Read
+							</a>
+						</li>
+					</ul>
 				</article>
 			))
 		)}

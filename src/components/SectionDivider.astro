@@ -1,5 +1,12 @@
 ---
+interface Props {
+	spaced?: boolean;
+}
+
 const { spaced = false } = Astro.props;
 ---
 
-<div class:list={["section-divider", { "section-divider--spaced": spaced }]} aria-hidden="true"></div>
+<div
+	class:list={["section-divider", { "section-divider--spaced": spaced }]}
+	aria-hidden="true"
+></div>
