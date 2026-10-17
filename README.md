@@ -16,7 +16,7 @@ pnpm build
 pnpm preview
 ```
 
-`PUBLIC_SITE_URL` defaults to `https://www.johannesmogashoa.co.za` and can be
+`PUBLIC_SITE_URL` defaults to `https://johannesmogashoa.co.za` and can be
 overridden for previews or alternate deployment environments.
 
 ## Cloudflare deployment

@@ -36,18 +36,24 @@
 
 **Outcome:** Know what is deployed, preserve functionality and establish an objective baseline.
 
-- [ ] **M0-01 · P0** Audit routes, shared components, asset usage and Cloudflare deployment settings  
+- [x] **M0-01 · P0** Audit routes, shared components, asset usage and Cloudflare deployment settings
   _Done when:_ Document current behavior, dependencies, deployment steps and any unknowns.
-- [ ] **M0-02 · P0** Record baseline desktop/mobile Lighthouse, accessibility and link checks  
+  _Evidence:_ [`docs/m0-baseline.md`](docs/m0-baseline.md#m0-01-routes-components-assets-and-deployment), 2026-10-17.
+- [x] **M0-02 · P0** Record baseline desktop/mobile Lighthouse, accessibility and link checks
   _Done when:_ Save reproducible findings and device/browser conditions; avoid claiming unmeasured scores.
-- [ ] **M0-03 · P0** Confirm canonical domain and redirect policy  
+  _Evidence:_ [`docs/m0-baseline.md`](docs/m0-baseline.md#m0-02-measured-baseline), Lighthouse 13.0.1 and Linkinator 7.5.1, 2026-10-17.
+- [x] **M0-03 · P0** Confirm canonical domain and redirect policy
   _Done when:_ Choose apex or www; verify redirects, environment variables, canonical URLs and README agree.
-- [ ] **M0-04 · P0** Inventory content and remove unverifiable portfolio claims  
+  _Evidence:_ [`docs/m0-baseline.md`](docs/m0-baseline.md#m0-03-canonical-domain-and-redirects); apex selected and source references aligned, 2026-10-17.
+- [x] **M0-04 · P0** Inventory content and remove unverifiable portfolio claims
   _Done when:_ Confirm roles, dates, contact links, article URLs and consent to publish project details.
-- [ ] **M0-05 · P0** Audit both public résumé PDFs and select one canonical current file  
+  _Evidence:_ CV-backed claims and contact links recorded in [`docs/m0-baseline.md`](docs/m0-baseline.md#m0-04-verified-content-inventory); owner approved Aluna Studio, HouseKeeper, and Ascendia details for publication, 2026-10-17.
+- [x] **M0-05 · P0** Audit both public résumé PDFs and select one canonical current file
   _Done when:_ Update résumé, remove or redirect outdated version, test download, avoid broken existing URLs.
-- [ ] **M0-06 · P1** Review stale React Review issue #1 against current Astro code  
+  _Evidence:_ Owner-provided 2026 CV installed at the canonical hyphenated URL and compatibility URL; both copies verified identical in [`docs/m0-baseline.md`](docs/m0-baseline.md#m0-05-resume-audit-and-canonical-file), 2026-10-17.
+- [x] **M0-06 · P1** Review stale React Review issue #1 against current Astro code
   _Done when:_ Close/supersede obsolete Next.js findings; carry only reproducible defects forward.
+  _Evidence:_ [Issue #1](https://github.com/JohannesMogashoa/profile/issues/1) closed as superseded; current follow-ups recorded in [`docs/m0-baseline.md`](docs/m0-baseline.md#m0-06-react-review-issue-1), 2026-10-17.
 
 ### M1 — Developer experience and architecture
 
