@@ -1,23 +1,28 @@
 ---
 import Section from "./Section.astro";
-import SectionTitle from "./SectionTitle.astro";
+import ButtonLink from "./ButtonLink.astro";
 ---
 
 <Section grid nopadding class="hero-section">
 	<div class="hero-section__content">
-		<SectionTitle main>
-			Welcome To <br />
-			My Personal Portfolio
-		</SectionTitle>
-		<p class="section-text">
-			Solving the world's problems one line of code at a time in the comfort of any stack.
+		<p class="eyebrow">
+			<span></span> Software engineer · Johannesburg
 		</p>
-		<a
-			class="primary-button"
-			href="/Johannes-Mogashoa-Resume.pdf"
-			download="Johannes Mogashoa Resume"
-		>
-			Get Resume
+		<h1>I build dependable software for complex workflows.</h1>
+		<p class="hero-section__lede">
+			I’m Johannes Mogashoa, a full-stack engineer specialising in .NET and TypeScript. I turn
+			demanding product and operational problems into clear, maintainable systems.
+		</p>
+		<div class="hero-section__actions">
+			<ButtonLink href="#work">
+				Explore selected work <span>↘</span>
+			</ButtonLink>
+			<ButtonLink href="mailto:yngstln.dev@gmail.com" variant="secondary">
+				Start a conversation
+			</ButtonLink>
+		</div>
+		<a class="text-link" href="/Johannes-Mogashoa-Resume.pdf" download="Johannes Mogashoa Resume">
+			Download résumé <span aria-hidden="true">↓</span>
 		</a>
 	</div>
 </Section>

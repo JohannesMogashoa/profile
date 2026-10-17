@@ -11,7 +11,8 @@ export default defineConfig({
 		trace: "on-first-retry",
 	},
 	webServer: {
-		command: "pnpm build && python3 -m http.server 4322 --bind 127.0.0.1 --directory dist",
+		command:
+			"./node_modules/.bin/astro check && ./node_modules/.bin/astro build && python3 -m http.server 4322 --bind 127.0.0.1 --directory dist",
 		reuseExistingServer: !process.env.CI,
 		timeout: 120_000,
 		url: "http://127.0.0.1:4322",

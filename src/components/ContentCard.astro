@@ -1,0 +1,24 @@
+---
+interface Props {
+	title: string;
+	status: string;
+	image?: string;
+	imageAlt?: string;
+}
+
+const { title, status, image, imageAlt = "" } = Astro.props;
+---
+
+<article class="portfolio-card">
+	{image ? (
+		<img src={image} alt={imageAlt} loading="lazy" decoding="async" />
+	) : (
+		<div class="portfolio-card__image-placeholder" aria-hidden="true">
+			{status}
+		</div>
+	)}
+	<p class="portfolio-card__status">{status}</p>
+	<h3>{title}</h3>
+	<slot />
+	<slot name="footer" />
+</article>

@@ -1,0 +1,19 @@
+---
+import type { CollectionEntry } from "astro:content";
+import ContentCard from "./ContentCard.astro";
+import TagList from "./TagList.astro";
+
+interface Props {
+	article: CollectionEntry<"articles">["data"];
+}
+
+const { article } = Astro.props;
+---
+
+<ContentCard title={article.title} status="Article" image={article.image} imageAlt={article.title}>
+	<p class="card-info">{article.description}</p>
+	<TagList items={article.tags} />
+	<a slot="footer" class="text-link" href={article.url} target="_blank" rel="noreferrer">
+		Read article <span aria-hidden="true">↗</span>
+	</a>
+</ContentCard>

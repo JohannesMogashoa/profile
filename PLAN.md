@@ -59,15 +59,15 @@
 
 **Outcome:** Create a safe, maintainable implementation foundation without unnecessary migration.
 
-- [ ] **M1-01 · P0** Add Astro-compatible TypeScript configuration and migrate data models  
+- [x] **M1-01 · P0** Add Astro-compatible TypeScript configuration and migrate data models
       _Done when:_ Enable astro check and incrementally type content and props; CI checks pass.
-      _Progress:_ Strict configuration, typed content/props, and zero-diagnostic `astro check` are complete; awaiting the first remote CI pass with M1-03.
+      _Evidence:_ Strict configuration, typed content/props, zero-diagnostic `astro check`, and successful remote Validate workflow confirmed by the owner, 2026-10-17.
 - [x] **M1-02 · P0** Set up formatting, linting and typecheck scripts
       _Done when:_ Document pnpm scripts; malformed code and type errors fail checks.
       _Evidence:_ Prettier, ESLint, `astro check`, Vitest, and build scripts documented in [`README.md`](README.md#quality-commands); `pnpm verify` passes, 2026-10-17.
-- [ ] **M1-03 · P0** Add GitHub Actions validation for PRs  
+- [x] **M1-03 · P0** Add GitHub Actions validation for PRs
       _Done when:_ Run install, lint, typecheck, build and tests; use dependency caching and locked installs.
-      _Progress:_ Workflow implemented in `.github/workflows/ci.yml`; awaiting its first remote run.
+      _Evidence:_ Cached, frozen-install Validate workflow implemented in `.github/workflows/ci.yml`; successful remote run confirmed by the owner, 2026-10-17.
 - [ ] **M1-04 · P1** Set up unit/component tests and Playwright smoke tests  
       _Done when:_ Cover navigation, key pages, project links, responsive menu and contact journey.
       _Progress:_ Two Vitest tests and four desktop/mobile Playwright tests pass for the current single-route site; future routes, published projects, and the M2 mobile menu still need coverage.
@@ -88,22 +88,30 @@
 
 **Outcome:** Build a polished, accessible identity with strong professional positioning.
 
-- [ ] **M2-01 · P0** Approve visual direction, design tokens, typography and spacing scale  
+- [x] **M2-01 · P0** Approve visual direction, design tokens, typography and spacing scale
       _Done when:_ Define light/dark colors with validated contrast and reusable responsive tokens.
-- [ ] **M2-02 · P0** Implement accessible global header, mobile navigation and footer  
+      _Evidence:_ Engineering-editorial direction, responsive tokens, and light/dark contrast ratios from 4.60:1 to 16.46:1 documented in [`docs/m2-design-system.md`](docs/m2-design-system.md), 2026-10-17.
+- [x] **M2-02 · P0** Implement accessible global header, mobile navigation and footer
       _Done when:_ All links work on all routes; keyboard, focus, current-page and touch behavior tested.
-- [ ] **M2-03 · P0** Replace generic hero with Johannes-led positioning and two CTAs  
+      _Evidence:_ Sticky global header, skip link, current-page state, 44 px controls, mobile disclosure, Escape handling, theme control, and contact footer implemented and browser-tested, 2026-10-17.
+- [x] **M2-03 · P0** Replace generic hero with Johannes-led positioning and two CTAs
       _Done when:_ Name, role, technical focus, work CTA and contact CTA visible on mobile.
-- [ ] **M2-04 · P0** Build featured-work section with meaningful empty/draft handling  
+      _Evidence:_ Johannes-led .NET/TypeScript positioning and work/contact actions verified in desktop and mobile renders, 2026-10-17.
+- [x] **M2-04 · P0** Build featured-work section with meaningful empty/draft handling
       _Done when:_ Display only verified featured projects; never show the existing 'fighting bugs' placeholder.
-- [ ] **M2-05 · P1** Build capability pillars, compact experience, writing and consulting teasers  
+      _Evidence:_ Featured-only collection query retained; intentional case-study-review state replaces the unverified placeholder and links to the verified GitHub profile, 2026-10-17.
+- [x] **M2-05 · P1** Build capability pillars, compact experience, writing and consulting teasers
       _Done when:_ Home tells a coherent career/consulting story without duplicating whole subpages.
-- [ ] **M2-06 · P1** Refactor background animation and motion treatment  
+      _Evidence:_ Three capability pillars, compact CV-backed experience, three latest articles, and grounded contact teaser implemented, 2026-10-17.
+- [x] **M2-06 · P1** Refactor background animation and motion treatment
       _Done when:_ Remove or simplify expensive distractions; reduced-motion preference honored.
-- [ ] **M2-07 · P1** Create reusable card, tag, section, button and article components  
+      _Evidence:_ Animated SVG replaced by a lightweight CSS system motif; the only status pulse is disabled for reduced-motion preference, 2026-10-17.
+- [x] **M2-07 · P1** Create reusable card, tag, section, button and article components
       _Done when:_ Components accept typed content and have responsive + focus states.
-- [ ] **M2-08 · P1** Improve small-screen typography, layout and tap targets  
+      _Evidence:_ Typed `ButtonLink`, `ContentCard`, `ArticleCard`, `TagList`, and existing section primitives compose the homepage with shared responsive and focus styles, 2026-10-17.
+- [x] **M2-08 · P1** Improve small-screen typography, layout and tap targets
       _Done when:_ Verify 320, 375, 768, 1024 and 1440 px without clipped content or horizontal overflow.
+      _Evidence:_ Playwright viewport matrix passes at every specified width; desktop and Pixel 5 full-page renders visually reviewed, 2026-10-17.
 
 ### M3 — Work and professional proof
 

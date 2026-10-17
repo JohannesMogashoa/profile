@@ -1,19 +1,28 @@
 ---
 import Icon from "./Icon.astro";
+import ButtonLink from "./ButtonLink.astro";
 ---
 
-<footer class="site-footer">
-	<ul class="site-footer__links">
-		<li>
-			<h2 class="site-footer__title">Email</h2>
-			<a class="site-footer__email" href="mailto:jomogashoa1993@gmail.com">
-				jomogashoa1993@gmail.com
-			</a>
-		</li>
-	</ul>
+<footer class="site-footer" id="contact">
+	<div class="contact-panel">
+		<p class="eyebrow">
+			<span></span> Let’s build clearly
+		</p>
+		<h2>Have a difficult software problem?</h2>
+		<p>Bring the context. I’ll bring an engineering perspective grounded in delivery.</p>
+		<ButtonLink href="mailto:yngstln.dev@gmail.com">
+			Start a conversation <span>↗</span>
+		</ButtonLink>
+	</div>
 
 	<div class="site-footer__bottom">
-		<p>Innovating with one line of code at a time</p>
+		<a href="/" class="brand-link" aria-label="Johannes Mogashoa home">
+			<span class="brand-link__mark">
+				<Icon name="brand" size={20} />
+			</span>
+			<span>Johannes Mogashoa</span>
+		</a>
+		<p>Software engineer · Johannesburg, South Africa</p>
 		<div class="site-footer__socials" aria-label="Social links">
 			<a
 				href="https://www.github.com/JohannesMogashoa"
@@ -21,7 +30,7 @@ import Icon from "./Icon.astro";
 				target="_blank"
 				rel="noreferrer"
 			>
-				<Icon name="github" size={30} />
+				<Icon name="github" size={22} />
 			</a>
 			<a
 				href="https://www.linkedin.com/in/johannes-mogashoa-358416190"
@@ -29,7 +38,7 @@ import Icon from "./Icon.astro";
 				target="_blank"
 				rel="noreferrer"
 			>
-				<Icon name="linkedin" size={30} />
+				<Icon name="linkedin" size={22} />
 			</a>
 		</div>
 	</div>

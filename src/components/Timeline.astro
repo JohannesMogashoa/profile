@@ -1,18 +1,22 @@
 ---
 import Section from "./Section.astro";
-import SectionDivider from "./SectionDivider.astro";
 import SectionTitle from "./SectionTitle.astro";
 import { timeline } from "../data/portfolio";
 ---
 
-<Section id="about" class="timeline-section">
-	<SectionTitle>About Me</SectionTitle>
-	<p class="section-text">
-		I'm a software engineer with five years of experience specialising in C#, TypeScript, React, and
-		Node.js. I focus on building scalable applications and connecting complex backend logic with
-		intuitive user experiences. I also share technical insights on DEV Community, contribute to open
-		source, and build developer tools that streamline delivery workflows.
-	</p>
+<Section class="timeline-section">
+	<div class="section-heading section-heading--split">
+		<div>
+			<p class="eyebrow">
+				<span></span> Experience
+			</p>
+			<SectionTitle>A career shaped by building and learning.</SectionTitle>
+		</div>
+		<p>
+			From junior developer to software engineer, I’ve worked across commerce, enterprise software,
+			code quality, and product delivery.
+		</p>
+	</div>
 
 	<div class="timeline" data-timeline>
 		<ul class="timeline__track" data-timeline-track aria-label="Career timeline">
@@ -48,7 +52,6 @@ import { timeline } from "../data/portfolio";
 			))}
 		</div>
 	</div>
-	<SectionDivider />
 </Section>
 
 <script>

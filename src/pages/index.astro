@@ -17,15 +17,15 @@ const articles = (await getCollection("articles", ({ data }) => !data.draft)).so
 
 <Layout>
 	<Header />
-	<main>
+	<main id="main-content">
 		<div class="hero-grid">
 			<Hero />
 			<BackgroundAnimation />
 		</div>
-		<Timeline />
-		<Articles articles={articles} />
 		<Technologies />
 		<Projects />
+		<Timeline />
+		<Articles articles={articles} />
 	</main>
 	<Footer />
 </Layout>

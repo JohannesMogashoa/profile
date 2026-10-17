@@ -1,50 +1,36 @@
 ---
-import Icon from "./Icon.astro";
 import Section from "./Section.astro";
-import SectionDivider from "./SectionDivider.astro";
 import SectionTitle from "./SectionTitle.astro";
 ---
 
-<Section id="tech">
-	<SectionDivider spaced />
-	<SectionTitle>Technologies</SectionTitle>
-	<p class="section-text">
-		Having worked with a variety of technologies, here are some that I have worked with the most.
-	</p>
-	<ul class="technology-list">
+<Section id="about" class="capabilities-section">
+	<div class="section-heading section-heading--split">
+		<div>
+			<p class="eyebrow">
+				<span></span> What I bring
+			</p>
+			<SectionTitle>Product-minded engineering, end to end.</SectionTitle>
+		</div>
+		<p>
+			I connect architecture, delivery, and user experience—so the software works as one coherent
+			system, not a collection of hand-offs.
+		</p>
+	</div>
+	<ol class="capability-list">
 		<li>
-			<picture>
-				<Icon name="frontend" size={30} />
-			</picture>
-			<div>
-				<h3>Front-End</h3>
-				<p>
-					TypeScript, React, Vue.js, <br />
-					Blazor WebAssembly
-				</p>
-			</div>
+			<span class="capability-list__number">01</span>
+			<h3>Backend systems</h3>
+			<p>Domain-focused APIs and services using C#, .NET, Node.js, PostgreSQL, and SQL Server.</p>
 		</li>
 		<li>
-			<picture>
-				<Icon name="backend" size={30} />
-			</picture>
-			<div>
-				<h3>Back-End</h3>
-				<p>
-					C#, .NET, Node.js, API design, <br />
-					PostgreSQL and SQL Server
-				</p>
-			</div>
+			<span class="capability-list__number">02</span>
+			<h3>Product interfaces</h3>
+			<p>Accessible, maintainable web experiences with TypeScript, React, Vue, and Blazor.</p>
 		</li>
 		<li>
-			<picture>
-				<Icon name="cloud" size={30} />
-			</picture>
-			<div>
-				<h3>Cloud &amp; Delivery</h3>
-				<p>AWS, Azure, Docker &amp; GitHub Actions</p>
-			</div>
+			<span class="capability-list__number">03</span>
+			<h3>Cloud delivery</h3>
+			<p>Reliable paths to production using AWS, Azure, Docker, and GitHub Actions.</p>
 		</li>
-	</ul>
-	<SectionDivider />
+	</ol>
 </Section>

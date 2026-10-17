@@ -1,35 +1,47 @@
 ---
 import { getCollection } from "astro:content";
+import ContentCard from "./ContentCard.astro";
 import Section from "./Section.astro";
-import SectionDivider from "./SectionDivider.astro";
 import SectionTitle from "./SectionTitle.astro";
+import TagList from "./TagList.astro";
 
 const projects = await getCollection("projects", ({ data }) => data.featured && !data.draft);
 ---
 
-<Section id="projects" nopadding>
-	<SectionDivider />
-	<SectionTitle main>Projects</SectionTitle>
-	<div class="card-grid">
+<Section id="work" class="work-section">
+	<div class="section-heading section-heading--split">
+		<div>
+			<p class="eyebrow">
+				<span></span> Selected work
+			</p>
+			<SectionTitle>Systems built around real constraints.</SectionTitle>
+		</div>
+		<p>Case studies are published only after their details and outcomes have been reviewed.</p>
+	</div>
+	<div class="work-grid">
 		{projects.length === 0 ? (
-			<p class="section-text section-text--empty">Still in the pipeline or fighting some bugs...</p>
+			<div class="work-empty">
+				<p class="work-empty__label">Case studies in review</p>
+				<h3>The work is real. The write-ups are being made useful.</h3>
+				<p>
+					Detailed project stories are being prepared with the same care as the systems behind them.
+					Public repositories remain available in the meantime.
+				</p>
+				<a
+					class="text-link"
+					href="https://github.com/JohannesMogashoa"
+					target="_blank"
+					rel="noreferrer"
+				>
+					Explore GitHub <span aria-hidden="true">↗</span>
+				</a>
+			</div>
 		) : (
 			projects.map(({ data: project }) => (
-				<article class="portfolio-card">
-					<div class="card-title">
-						<h3>{project.title}</h3>
-						<hr />
-					</div>
+				<ContentCard title={project.title} status={project.status.replace("-", " ")}>
 					<p class="card-info">{project.description}</p>
-					<div>
-						<div class="card-label">Stack</div>
-						<ul class="tag-list">
-							{project.stack.map((tag) => (
-								<li>{tag}</li>
-							))}
-						</ul>
-					</div>
-					<ul class="card-links">
+					<TagList items={project.stack} />
+					<ul slot="footer" class="card-links">
 						{project.links.code && (
 							<li>
 								<a href={project.links.code}>Code</a>
@@ -41,7 +53,7 @@ const projects = await getCollection("projects", ({ data }) => data.featured && 
 							</li>
 						)}
 					</ul>
-				</article>
+				</ContentCard>
 			))
 		)}
 	</div>
